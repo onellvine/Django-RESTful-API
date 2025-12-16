@@ -95,6 +95,7 @@ class MovieList(generics.ListAPIView):
 
 class MovieDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Movie.objects.all()
+    lookup_field = "id"
     serializer_class = MovieSerializer
     permission_classes = [IsAdminUser]
 
